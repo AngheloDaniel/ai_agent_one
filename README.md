@@ -1,2 +1,2 @@
-# ai_agent_one
+# AI Agent version 1
 AI agent using Python
