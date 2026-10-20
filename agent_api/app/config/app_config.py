@@ -6,6 +6,7 @@ class Settings(BaseSettings):
 
     aws_region: str = "us-east-1"
     bedrock_model_id: str = "amazon.nova-micro-v1:0"
+    bedrock_endpoint_url: str = "https://bedrock-runtime.us-east-1.amazonaws.com"
     mcp_server_url: str = "http://localhost:8001"
     chroma_persist_path: str = "./chroma_store"
     data_path: str = "./data"
