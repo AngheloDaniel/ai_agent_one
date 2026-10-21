@@ -28,3 +28,16 @@ class BedrockClient:
             kwars["toolConfig"] = {"tools": tools}
 
         return self._client.converse(**kwars)
+
+    def _format_tools_for_bedrock(self, mcp_tools: list[dict]) -> list[dict]:
+        """Converts the MCP format to the required Bedrock format"""
+        return [
+            {
+                "toolSpec": {
+                    "name": t["name"],
+                    "description": t["description"],
+                    "input_schema": {"json": t["input_schema"]},
+                }
+            }
+            for t in mcp_tools
+        ]
